@@ -84,7 +84,7 @@ func CommandHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		}
 		for _, member := range members {
 			if member.User.ID == s.State.User.ID {
-				return
+				continue;
 			}
 			channel, CreateChannelError := s.UserChannelCreate(member.User.ID)
 			if CreateChannelError != nil {
